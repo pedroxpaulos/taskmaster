@@ -15,21 +15,19 @@ const taskSchema = new mongoose.Schema({
 	},
 	dueDate: {
 		type: Date,
+		default: Date.now,
 		required: true,
 	},
 	status: {
 		type: String,
 		enum: ['Incomplete', 'In Progress', 'Completed'],
 		default: 'Incomplete',
+		required: true,
 	},
 	priority: {
 		type: String,
 		enum: ['Low', 'Medium', 'High'],
 		default: 'Medium',
-	},
-	createdBy: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'User',
 		required: true,
 	},
 	// You can add more fields as needed, such as assignedTo, project, etc.

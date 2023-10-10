@@ -4,7 +4,7 @@ const TaskCard = (props) => {
 	return (
 		<div
 			name="TaskCard"
-			className="w-full p-6 mt-6 bg-slate-300 text-white border-b-1 border-gray-300"
+			className="w-full p-6 mt-2 bg-slate-300 text-white border-b-1 border-gray-300"
 		>
 			<div className="flex flex-row p-6 justify-content items-center space-x-2">
 				<p
@@ -19,10 +19,10 @@ const TaskCard = (props) => {
 				<p name="dueDate" className="text-4xl font-medium">
 					{props.dueDate}
 				</p>
-				<p name="dueDate" className="text-4xl font-medium">
+				<p name="status" className="text-4xl font-medium">
 					{props.status}
 				</p>
-				<p name="dueDate" className="text-4xl font-light">
+				<p name="priority" className="text-4xl font-light">
 					{props.priority}
 				</p>
 			</div>

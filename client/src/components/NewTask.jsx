@@ -6,7 +6,6 @@ const NewTask = ({ onTaskSubmitted }) => {
 	const [task, setTask] = useState({});
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		alert('here');
 		axios
 			.post(`${process.env.REACT_APP_SERVER_URL}/api/tasks`, task)
 			.then((response) => {
@@ -64,10 +63,7 @@ const NewTask = ({ onTaskSubmitted }) => {
 						required
 						className="pl-6 text-2xl font-bold bg-slate-100 text-black"
 						type="date"
-						name="description"
-						maxLength="30"
-						rows="5"
-						cols="30"
+						name="date"
 						value={task.dueDate || ''}
 						onChange={(e) =>
 							setTask((prevTask) => ({
@@ -118,11 +114,6 @@ const NewTask = ({ onTaskSubmitted }) => {
 				>
 					Submit
 				</button>
-				<button
-					className="pl-6 mr-6 text-2xl font-bold cursor-pointer hover:font-semibold text-black"
-					type="button"
-					onClick={() => console.log(task)}
-				></button>
 			</form>
 		</div>
 	);

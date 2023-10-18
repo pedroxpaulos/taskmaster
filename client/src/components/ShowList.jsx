@@ -1,6 +1,7 @@
 import axios from 'axios';
 import TaskCard from './TaskCard';
 import { useState, useEffect } from 'react';
+import Modal from './Modal';
 
 const ShowList = () => {
 	const [tasks, setTasks] = useState([]);
@@ -44,8 +45,10 @@ const ShowList = () => {
 	};
 
 	return (
-		<div>
+		<div className="pt-20">
 			<form className="pl-6 pt-2 flex flex-col md:flex-row">
+				<Modal task={{}} isNewTask={true} />
+
 				<button
 					className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-extralight rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
 					onClick={sortByStatus}
